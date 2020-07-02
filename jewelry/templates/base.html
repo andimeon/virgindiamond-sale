@@ -1,0 +1,56 @@
+{% load static %} <!doctype html>
+{% load humanize %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Virgin Diamond{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+  <!-- Add -->
+
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-md rgba-pink-slight">
+        <a class="navbar-brand" href="{% url 'index' %}">Virgin Diamond</a>
+        <div class="mr-auto">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb d-inline-flex pl-5 pt-0">
+              {% block breadcrumb %}
+              {% endblock %}
+            </ol>
+          </nav>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="card mt-3 mb-3">
+        <div class="card-body">
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="container">
+      <footer class="page-footer font-small pink">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+          <a href="https://www.virgindiamond.co.jp"> Virgindiamond.co.jp</a>
+        </div>
+      </footer>
+    </div>
+    <!-- Footer -->
+
+    <script src="{% static 'js/jquery-3.5.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/mdb.min.js' %}"></script>
+
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% for types in types_row %}
+    <div class="row mt-4 mb-4">
+      {% for type in types %}
+        <div class="col">
+          <div class="card mx-auto h-100 text-center" style="width: 18rem;">
+            <div class="view overlay">
+              <img class="card-img-top" src="{{ type.cover_url }}" alt="{{ type.title }}">
+              <a href="{% url 'types_slug' type.slug %}">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ type.title }}</h5>
+              <p class="card-text small text-muted">{{ type.description }}</p>
+              <a href="{% url 'types_slug' type.slug %}" class="btn btn-pink">{{ type.title }}を見る</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+{% endblock %}

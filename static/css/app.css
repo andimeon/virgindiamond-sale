@@ -1,0 +1,23 @@
+.navbar-brand {
+  font-family: 'Rochester', cursive;
+  color: #de1944;
+}
+
+.modal-dialog {
+    max-width: 75%;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
+.button_class {
+    top: 5px;
+    left: 5px;
+}

@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block title %}
+  {{ product.product_num }} - {{ product.type.title }} - {{ block.super }}
+{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a class="pink-text" href="{% url 'index' %}">種類</a></li>
+  <li class="breadcrumb-item"><a class="pink-text" href="{% url 'types_slug' product.type.slug %}">{{ product.type.title }}</a></li>
+  <li class="breadcrumb-item active text-dark">{{ product.product_num }}</li>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-rg-4 col-md-6">
+      <a>
+        <img class="img-fluid z-depth-3 rounded" src="{{ product.image_thumbnail.url }}" alt="{{ product.type.title }}"
+          data-toggle="modal" data-target="#mymodal">
+      </a>
+      <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-body mb-0 p-0">
+              <img class="img-thumbnail z-depth-5 rounded" src="{{ product.image.url }}"
+                   alt="{{ product.type.title }}">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-pink btn-sm">
+                <a class="pink-text" href="{% url 'image' product.product_num %}">Full image</a>
+              </button>
+              <button type="button" class="btn btn-pink btn-sm" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col ml-5">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td>
+              <b>商品番号</b>
+            </td>
+            <td>
+              {{ product.product_num }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>品名</b>
+            </td>
+            <td>
+              {{ product.description }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>規格</b>
+            </td>
+            <td>
+              {{ product.standart }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>通常価格 (税込)</b>
+            </td>
+            <td>
+              ¥ {{ product.price| intcomma }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>枚数</b>
+            </td>
+            <td>
+              {{ product.quantity }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}
