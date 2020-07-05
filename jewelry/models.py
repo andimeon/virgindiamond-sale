@@ -24,7 +24,7 @@ class Type(models.Model):
 
 
 def product_img_path(instance, filename):
-    return os.path.join(instance.type.title, filename)
+    return os.path.join(instance.type.title_eng, filename)
 
 
 class Product(models.Model):
