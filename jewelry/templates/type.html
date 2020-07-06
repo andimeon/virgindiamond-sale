@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block breadcrumb %}
-  <li class="breadcrumb-item"><a class="pink-text" href="{% url 'index' %}">Main page</a></li>
+  <li class="breadcrumb-item"><a class="pink-text" href="{% url 'index' %}">種類</a></li>
   <li class="breadcrumb-item active text-dark">{{ type.title }}</li>
 {% endblock %}
 
@@ -15,7 +15,6 @@
     <table class="table table-hover text-center">
       <thead>
         <tr>
-          <th scope="col">No</th>
           <th scope="col">商品番号</th>
           <th scope="col">品名</th>
           <th scope="col">規格</th>
@@ -27,7 +26,6 @@
       {% for product in products %}
         <tbody>
           <tr>
-            <th scope="row">{{ forloop.counter }}</th>
             <td>{{ product.product_num }}</td>
             <td>{{ product.description }}</td>
             <td>{{ product.standart }}</td>
