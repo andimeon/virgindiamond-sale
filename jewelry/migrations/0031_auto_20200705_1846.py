@@ -14,7 +14,7 @@ def check_exist(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('jewelry', '0030_auto_20200705_1824'),
+        ('jewelry', '0024_type_title_eng'),
     ]
     
     operations = [
