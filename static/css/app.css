@@ -21,3 +21,21 @@
     top: 5px;
     left: 5px;
 }
+
+.modal-body {
+    display:inline-block;
+}
+
+#custom-button {
+  font-size: 4vmin;
+  position: absolute;
+  background: transparent;
+  border-style: none;
+  top: 1vw;
+  right:2%;
+  color: white;
+}
+
+#full-image {
+  display:inline-block;
+}
