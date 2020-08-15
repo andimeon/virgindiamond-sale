@@ -2,9 +2,9 @@
 
 {% block content %}
   {% for types in types_row %}
-    <div class="row mt-4 mb-4">
+    <div class="row">
       {% for type in types %}
-        <div class="col">
+        <div class="col" style="margin: 1em;">
           <div class="card mx-auto h-100 text-center" style="width: 18rem;">
             <div class="view overlay">
               <img class="card-img-top" src="{{ type.cover_url }}" alt="{{ type.title }}">

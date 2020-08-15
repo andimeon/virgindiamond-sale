@@ -24,12 +24,9 @@
             <div class="modal-body mb-0 p-0">
               <img class="img-thumbnail z-depth-5 rounded" src="{{ product.image.url }}"
                    alt="{{ product.type.title }}">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-pink btn-sm">
-                <a class="pink-text" href="{% url 'image' product.product_num %}">Full image</a>
+              <button type="button" id="custom-button">
+                <a style="color: white;" href="{% url 'image' product.product_num %}"><i class="fa fa-expand" aria-hidden="true"></i></a>
               </button>
-              <button type="button" class="btn btn-pink btn-sm" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
