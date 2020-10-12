@@ -16,10 +16,9 @@
       <thead>
         <tr>
           <th scope="col">商品番号</th>
-          <th scope="col">品名</th>
-          <th scope="col">規格</th>
+          <th scope="col" class="d-none d-lg-block">品名</th>
           <th scope="col">通常価格 (税込)</th>
-          <th scope="col">枚数</th>
+          <th scope="col" class="d-none d-md-block">枚数</th>
           <th scope="col">写真	</th>
         </tr>
       </thead>
@@ -27,12 +26,13 @@
         <tbody>
           <tr>
             <td>{{ product.product_num }}</td>
-            <td>{{ product.description }}</td>
-            <td>{{ product.standart }}</td>
+            <td class="d-none d-lg-block">{{ product.description }}</td>
             <td>¥ {{ product.price| intcomma }}</td>
-            <td>{{ product.quantity }}</td>
+            <td class="d-none d-md-block">{{ product.quantity }}</td>
             <td>
-              <a class="btn btn-outline-pink btn-sm" href="{% url 'product' product.product_num %}" role="button">見る</a>
+              <a class="btn btn-outline-pink btn-sm" href="{% url 'product' product.product_num %}" role="button">
+                <i class="fa fa-forward" aria-hidden="true"></i>
+              </a>
             </td>
           </tr>
         </tbody>
